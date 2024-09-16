@@ -3,10 +3,26 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 
+const DOUBLETAP_DELAY = .25
+var doubletap_time = DOUBLETAP_DELAY
+var last_keycode = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+
+func _process(delta):
+	doubletap_time -= delta
+
+func _input(event):
+	if event is InputEventKey and event.is_pressed():
+		if last_keycode == event.keycode and doubletap_time >= 0: 
+			print("DOUBLETAP: ", String.chr(event.keycode))
+			last_keycode = 0
+		else:
+			last_keycode = event.keycode
+		doubletap_time = DOUBLETAP_DELAY
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -32,11 +48,11 @@ func _physics_process(delta):
 		else:
 			animated_sprite.play("run")
 	else: 
-		animated_sprite.play("run")
+		animated_sprite.play("jump")
 	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
