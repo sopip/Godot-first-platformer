@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://deqhy25righ1g"]
+[gd_scene load_steps=19 format=3 uid="uid://deqhy25righ1g"]
 
-[ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/player.tscn" id="1_3ok37"]
+[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_3adsb"]
+[ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/Player.tscn" id="1_3ok37"]
 [ext_resource type="Texture2D" uid="uid://dae5dd7g3ierr" path="res://Assets/Background/Pink.png" id="1_lqyxv"]
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="1_nfdpa"]
 [ext_resource type="PackedScene" uid="uid://drynmy0f1hxf" path="res://Scenes/Platform.tscn" id="3_mgl5h"]
@@ -687,6 +688,21 @@ _data = {
 "move": SubResource("Animation_17x33")
 }
 
+[sub_resource type="Animation" id="Animation_lqbpd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1121, -102)]
+}
+
 [sub_resource type="Animation" id="Animation_bv3ct"]
 resource_name = "move"
 length = 1.5
@@ -704,8 +720,15 @@ tracks/0/keys = {
 "values": [Vector2(1121, -102), Vector2(1121, -181)]
 }
 
-[sub_resource type="Animation" id="Animation_lqbpd"]
-length = 0.001
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xienm"]
+_data = {
+"RESET": SubResource("Animation_lqbpd"),
+"move": SubResource("Animation_bv3ct")
+}
+
+[sub_resource type="Animation" id="Animation_ehio0"]
+length = 4.5
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -713,16 +736,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1121, -102)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xienm"]
-_data = {
-"RESET": SubResource("Animation_lqbpd"),
-"move": SubResource("Animation_bv3ct")
+"values": [Vector2(1226, -228), Vector2(1445, -228), Vector2(1445, -101)]
 }
 
 [sub_resource type="Animation" id="Animation_ll3xd"]
@@ -742,22 +759,6 @@ tracks/0/keys = {
 "values": [Vector2(1226, -228), Vector2(1409, -228)]
 }
 
-[sub_resource type="Animation" id="Animation_ehio0"]
-length = 4.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1226, -228), Vector2(1445, -228), Vector2(1445, -101)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_my70s"]
 _data = {
 "RESET": SubResource("Animation_ehio0"),
@@ -765,6 +766,7 @@ _data = {
 }
 
 [node name="Tiles" type="Node2D"]
+script = ExtResource("1_3adsb")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uwyav")
