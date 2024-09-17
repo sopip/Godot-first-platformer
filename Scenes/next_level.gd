@@ -1,11 +1,12 @@
 extends Area2D
 
+func _on_body_entered(body):
+	if body.is_in_group("player"):  # hvis kollisionen er med spilleren
+		$CollisionShape2D.disabled = true
+		
+		
+		$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# når collected animationen er færdig: 
+func _on_animation_finished():
+	queue_free()  # collected animationen fjernes
