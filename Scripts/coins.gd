@@ -3,7 +3,7 @@ extends Area2D
 var collected = false
 
 func _ready():
-	$AnimatedSprite2D.play("æble") # her kan man ændre mønten 
+	$AnimatedSprite2D.play("banan") # her kan man ændre mønten 
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and not collected:  # hvis kollisionen er med spilleren
