@@ -13,7 +13,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
 
 
-
 func _process(delta):
 	doubletap_time -= delta
 
@@ -25,6 +24,9 @@ func _input(event):
 		else:
 			last_keycode = event.keycode
 		doubletap_time = DOUBLETAP_DELAY
+
+func _ready():
+	add_to_group("player")
 
 func _physics_process(delta):
 	# Add the gravity.
