@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://deqhy25righ1g"]
+[gd_scene load_steps=21 format=3 uid="uid://deqhy25righ1g"]
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1_kc6ft"]
 [ext_resource type="Texture2D" uid="uid://dae5dd7g3ierr" path="res://Assets/Background/Pink.png" id="2_gacph"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/Player.tscn" id="5_4fk7l"]
 [ext_resource type="PackedScene" uid="uid://dxgjys7yydevu" path="res://Scenes/coin.tscn" id="6_p352x"]
 [ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/next_level.tscn" id="7_irv8t"]
+[ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="8_8kjqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo0h1"]
 texture = ExtResource("2_gacph")
@@ -824,6 +825,9 @@ collision_layer = 2
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 4)
 zoom = Vector2(2.5, 2.5)
+limit_left = -340
+limit_top = -360
+limit_bottom = 400
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
@@ -858,3 +862,5 @@ position = Vector2(-22, -73)
 
 [node name="Coin" parent="Coins" instance=ExtResource("6_p352x")]
 position = Vector2(1122, -257)
+
+[node name="Death" parent="." instance=ExtResource("8_8kjqx")]
