@@ -58,5 +58,7 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+	if Global.health < Global.prev_health:
+		animated_sprite.play("hit")
+		print(Global.health)
 	move_and_slide()

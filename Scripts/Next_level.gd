@@ -6,6 +6,7 @@ func _on_body_entered(body):
 	$CollisionShape2D.disabled = false
 	# print("hello")
 	
+	
 	if body.is_in_group("player"):  # hvis kollisionen er med spilleren
 		# print("hello")
 		var current_scene_file = get_tree().current_scene.scene_file_path
@@ -14,6 +15,6 @@ func _on_body_entered(body):
 		var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
 		
 		print(next_level_path)
-		
 		get_tree().change_scene_to_file(next_level_path)
+		
 

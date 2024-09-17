@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://deqhy25righ1g"]
+[gd_scene load_steps=21 format=3 uid="uid://deqhy25righ1g"]
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1_kc6ft"]
 [ext_resource type="Texture2D" uid="uid://dae5dd7g3ierr" path="res://Assets/Background/Pink.png" id="2_gacph"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dxgjys7yydevu" path="res://Scenes/coin.tscn" id="6_p352x"]
 [ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/next_level.tscn" id="7_irv8t"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="8_8kjqx"]
-[ext_resource type="PackedScene" uid="uid://cmvt6hakvny0e" path="res://Scenes/Spikes.tscn" id="9_gmyfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo0h1"]
 texture = ExtResource("2_gacph")
@@ -865,9 +864,3 @@ position = Vector2(-22, -73)
 position = Vector2(1122, -257)
 
 [node name="Death" parent="." instance=ExtResource("8_8kjqx")]
-
-[node name="Enemy" parent="." instance=ExtResource("9_gmyfc")]
-position = Vector2(370, -8)
-
-[node name="Enemy2" parent="." instance=ExtResource("9_gmyfc")]
-position = Vector2(386, -8)
