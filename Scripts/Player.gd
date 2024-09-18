@@ -19,7 +19,7 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
 		if last_keycode == event.keycode and doubletap_time >= 0: 
-			print("DOUBLETAP: ", String.chr(event.keycode))
+		#	print("DOUBLETAP: ", String.chr(event.keycode))
 			last_keycode = 0
 		else:
 			last_keycode = event.keycode
@@ -58,8 +58,13 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if Global.health < Global.prev_health:
-		animated_sprite.play("hit")
-		print(Global.health)
 		
+	if Global.hiit == true:
+		Global.hiit = false
+		animated_sprite.play("hit")
+		$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	move_and_slide()
+
+func _on_animation_finished():
+	queue_free()  # collected animationen fjernes
+
