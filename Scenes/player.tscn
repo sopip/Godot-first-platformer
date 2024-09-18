@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://du8c4c3ryx7y3"]
+[gd_scene load_steps=45 format=3 uid="uid://du8c4c3ryx7y3"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_j8458"]
 [ext_resource type="Texture2D" uid="uid://c55pls6yslmi7" path="res://Assets/Main Characters/Pink Man/Idle (32x32).png" id="1_yraps"]
@@ -46,10 +46,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_f3ikx"]
 atlas = ExtResource("3_chd7a")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aqea7"]
-atlas = ExtResource("3_chd7a")
-region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gqff"]
 atlas = ExtResource("3_chd7a")
@@ -194,9 +190,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_f3ikx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aqea7")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_7gqff")
 }, {
 "duration": 1.0,
@@ -204,7 +197,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 4.0
+"speed": 26.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -307,8 +300,6 @@ script = ExtResource("1_j8458")
 sprite_frames = SubResource("SpriteFrames_d0h3b")
 animation = &"hit"
 autoplay = "idle"
-frame = 6
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

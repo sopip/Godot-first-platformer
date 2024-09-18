@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-
 const DOUBLETAP_DELAY = .25
+
 var doubletap_time = DOUBLETAP_DELAY
 var last_keycode = 0
 
@@ -11,7 +11,6 @@ var last_keycode = 0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
-
 
 func _process(delta):
 	doubletap_time -= delta
@@ -45,26 +44,26 @@ func _physics_process(delta):
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("run")
-	else: 
-		animated_sprite.play("jump")
-	
+		
+	if Global.hiit == false: # eventuelt?
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
+		else: 
+			animated_sprite.play("jump")
+		
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if Global.hiit == true:
-		Global.hiit = false
 		animated_sprite.play("hit")
-		$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_animation_finished"))
+		$AnimatedSprite2D.connect("animation_finished", Callable(self, "hitfalse"))
+		
 	move_and_slide()
 
-func _on_animation_finished():
-	queue_free()  # collected animationen fjernes
-
+func hitfalse():
+	Global.hiit = false
