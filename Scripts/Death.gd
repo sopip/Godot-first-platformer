@@ -10,3 +10,7 @@ func _on_timer_timeout():
 	print("henuuuuuu")
 	get_tree().reload_current_scene() # ÆNDRE HER (EVENTUELT)
 
+func _ready():
+	if Global.health == 0:
+		get_tree().reload_current_scene()
+	

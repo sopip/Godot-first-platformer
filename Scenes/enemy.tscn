@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://wwestjb37hfp"]
+
+[ext_resource type="Texture2D" uid="uid://5n0aa5cf1l0l" path="res://Assets/Main Characters/Ninja Frog/Double Jump (32x32).png" id="1_78knl"]
+[ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="2_rqlrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i5fv"]
+atlas = ExtResource("1_78knl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txxdp"]
+atlas = ExtResource("1_78knl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05bbd"]
+atlas = ExtResource("1_78knl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay5eo"]
+atlas = ExtResource("1_78knl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2b1m"]
+atlas = ExtResource("1_78knl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sab83"]
+atlas = ExtResource("1_78knl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji83h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i5fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txxdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05bbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay5eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2b1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sab83")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si3hx"]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ji83h")
+autoplay = "default"
+frame_progress = 0.681564
+
+[node name="Death" parent="." instance=ExtResource("2_rqlrx")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Death"]
+shape = SubResource("CircleShape2D_si3hx")

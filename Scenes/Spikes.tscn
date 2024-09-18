@@ -4,14 +4,21 @@
 [ext_resource type="Script" path="res://Scripts/Spikes.gd" id="1_mmilh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pgwm"]
-size = Vector2(15, 6)
+size = Vector2(31, 6)
 
 [node name="Enemy" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_mmilh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="spike1" type="Sprite2D" parent="."]
+texture = ExtResource("1_jl6fe")
+
+[node name="spike2" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
 texture = ExtResource("1_jl6fe")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 5)
+position = Vector2(7.5, 5)
 shape = SubResource("RectangleShape2D_8pgwm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -61,4 +61,5 @@ func _physics_process(delta):
 	if Global.health < Global.prev_health:
 		animated_sprite.play("hit")
 		print(Global.health)
+		
 	move_and_slide()
