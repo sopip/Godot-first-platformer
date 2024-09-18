@@ -15,7 +15,7 @@ func _on_body_entered(body):
 		$AnimatedSprite2D.play("collected")  # skift til collected animation
 		
 		Global.antal += 1
-		print("jubi du har samlet " , Global.antal , " mønter")
+		print("jubi du har samlet " , Global.antal , " frugter")
 		
 		$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_animation_finished"))
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bqcuasqoofqjc"]
 
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="1_p1n5c"]
-[ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/player.tscn" id="2_ct1by"]
+[ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/Player.tscn" id="2_ct1by"]
 [ext_resource type="PackedScene" uid="uid://dxgjys7yydevu" path="res://Scenes/coin.tscn" id="3_jw5mp"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="4_xekq5"]
-[ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/next_level.tscn" id="5_gkr2x"]
+[ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/Next_level.tscn" id="5_gkr2x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6adbf"]
 
