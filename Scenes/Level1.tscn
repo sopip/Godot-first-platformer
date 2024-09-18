@@ -826,6 +826,10 @@ texture = ExtResource("6_suyma")
 unique_name_in_owner = true
 script = SubResource("GDScript_7vsio")
 
+[node name="Coin_label" type="Label" parent="Global"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uwyav")
 format = 2
@@ -900,6 +904,16 @@ motion_mirroring = Vector2(800, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground/4"]
 position = Vector2(207, -103)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ts6o4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground/4"]
+position = Vector2(1223, -96)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ts6o4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Foreground/4"]
+position = Vector2(2240, -92)
 scale = Vector2(2, 2)
 texture = ExtResource("4_ts6o4")
 
