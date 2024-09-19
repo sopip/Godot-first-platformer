@@ -44,6 +44,8 @@ func play_idle():
 	animated_sprite.play("chameleon_idle")
 
 func play_hit():
+	var die = $ded
+	die.play()
 	print("playhit")
 	animated_sprite.play("chameleon_attack")
 	set_physics_process(true)

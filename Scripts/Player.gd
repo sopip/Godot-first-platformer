@@ -29,11 +29,12 @@ func _ready():
 	add_to_group("player")
 
 func _physics_process(delta):
-	# Add the gravity.
+	var ouch = $ouch
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	# Handle jump.
+	# hopper
 	if Input.is_action_just_pressed("w") or Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
@@ -65,6 +66,7 @@ func _physics_process(delta):
 		
 	if Global.hiit == true:
 		animated_sprite.play("hit")
+		ouch.play()
 		$AnimatedSprite2D.connect("animation_finished", Callable(self, "hitfalse"))
 		
 	move_and_slide()

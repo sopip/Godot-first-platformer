@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwjlscsbvdil2"]
+
+[ext_resource type="AudioStream" uid="uid://bccwsp1t8daq7" path="res://Assets/Sound/lofi-orchestra-162306.mp3" id="1_16mh6"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_16mh6")
+volume_db = -15.059
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://dxgjys7yydevu"]
+[gd_scene load_steps=117 format=3 uid="uid://dxgjys7yydevu"]
 
 [ext_resource type="Script" path="res://Scripts/coins.gd" id="1_6xs5m"]
 [ext_resource type="Texture2D" uid="uid://bv5mkxqd3idw1" path="res://Assets/Items/Fruits/Pineapple.png" id="1_uooy4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://coiyehgre5trd" path="res://Assets/Items/Fruits/Cherries.png" id="6_45ku6"]
 [ext_resource type="Texture2D" uid="uid://b5fkgj37c6iyh" path="res://Assets/Items/Fruits/Kiwi.png" id="7_qkcuj"]
 [ext_resource type="Texture2D" uid="uid://dhovwuoc7o44j" path="res://Assets/Items/Fruits/Apple.png" id="8_qfjlp"]
+[ext_resource type="AudioStream" uid="uid://boljqknv4dg88" path="res://Assets/Sound/Sound effects/collectFruit.mp3" id="10_xmfr5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmdms"]
 atlas = ExtResource("1_uooy4")
@@ -796,5 +797,8 @@ autoplay = "banan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mxk1s")
+
+[node name="collectFruit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_xmfr5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
