@@ -1,9 +1,49 @@
-[gd_scene load_steps=30 format=3 uid="uid://wwestjb37hfp"]
+[gd_scene load_steps=40 format=3 uid="uid://wwestjb37hfp"]
 
 [ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_w34k3"]
 [ext_resource type="Texture2D" uid="uid://d16vhel67x468" path="res://Assets/Enemies/Chameleon/Attack (84x38).png" id="2_audga"]
 [ext_resource type="Texture2D" uid="uid://thvee35ubt7" path="res://Assets/Enemies/Chameleon/Idle (84x38).png" id="2_pg7wo"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="2_rqlrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnbqo"]
+atlas = ExtResource("2_audga")
+region = Rect2(0, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4sio"]
+atlas = ExtResource("2_audga")
+region = Rect2(84, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqegy"]
+atlas = ExtResource("2_audga")
+region = Rect2(168, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bbhb"]
+atlas = ExtResource("2_audga")
+region = Rect2(252, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3swl"]
+atlas = ExtResource("2_audga")
+region = Rect2(336, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx8yt"]
+atlas = ExtResource("2_audga")
+region = Rect2(420, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5hry"]
+atlas = ExtResource("2_audga")
+region = Rect2(504, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n8rd"]
+atlas = ExtResource("2_audga")
+region = Rect2(588, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwisk"]
+atlas = ExtResource("2_audga")
+region = Rect2(672, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml6wu"]
+atlas = ExtResource("2_audga")
+region = Rect2(756, 0, 84, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h43bs"]
 atlas = ExtResource("2_audga")
@@ -99,6 +139,41 @@ region = Rect2(1008, 0, 84, 38)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ji83h"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnbqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4sio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqegy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bbhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3swl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx8yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5hry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n8rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwisk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml6wu")
+}],
+"loop": true,
+"name": &"chameleon_attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h43bs")
@@ -199,8 +274,15 @@ script = ExtResource("1_w34k3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_ji83h")
-animation = &"chameleon_hit1"
+animation = &"chameleon_attack"
 autoplay = "chameleon_idle"
+frame = 6
+frame_progress = 0.863588
+
+[node name="WeaponArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponArea"]
+position = Vector2(-12, 2)
 
 [node name="Death" parent="." instance=ExtResource("2_rqlrx")]
 
