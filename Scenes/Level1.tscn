@@ -899,6 +899,8 @@ collision_layer = 2
 [node name="NextLevel" parent="." instance=ExtResource("7_irv8t")]
 position = Vector2(2156, -96)
 
+[node name="Death" parent="." instance=ExtResource("8_8kjqx")]
+
 [node name="Foreground" type="Node" parent="."]
 
 [node name="4" type="ParallaxLayer" parent="Foreground"]
@@ -954,8 +956,6 @@ position = Vector2(-22, -73)
 
 [node name="Coin" parent="Coins" instance=ExtResource("6_p352x")]
 position = Vector2(1122, -257)
-
-[node name="Death" parent="." instance=ExtResource("8_8kjqx")]
 
 [node name="Spikes" type="Node" parent="."]
 

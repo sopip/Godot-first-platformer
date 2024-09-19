@@ -1,5 +1,4 @@
 extends Area2D
-
 # indgår i spikes
 
 @onready var timer = $Timer
