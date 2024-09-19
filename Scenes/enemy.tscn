@@ -1,33 +1,49 @@
-[gd_scene load_steps=26 format=3 uid="uid://wwestjb37hfp"]
+[gd_scene load_steps=30 format=3 uid="uid://wwestjb37hfp"]
 
-[ext_resource type="Texture2D" uid="uid://5n0aa5cf1l0l" path="res://Assets/Main Characters/Ninja Frog/Double Jump (32x32).png" id="1_78knl"]
 [ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_w34k3"]
+[ext_resource type="Texture2D" uid="uid://d16vhel67x468" path="res://Assets/Enemies/Chameleon/Attack (84x38).png" id="2_audga"]
 [ext_resource type="Texture2D" uid="uid://thvee35ubt7" path="res://Assets/Enemies/Chameleon/Idle (84x38).png" id="2_pg7wo"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="2_rqlrx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6i5fv"]
-atlas = ExtResource("1_78knl")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h43bs"]
+atlas = ExtResource("2_audga")
+region = Rect2(0, 0, 84, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_txxdp"]
-atlas = ExtResource("1_78knl")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5p0r"]
+atlas = ExtResource("2_audga")
+region = Rect2(84, 0, 84, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_05bbd"]
-atlas = ExtResource("1_78knl")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx3he"]
+atlas = ExtResource("2_audga")
+region = Rect2(168, 0, 84, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ay5eo"]
-atlas = ExtResource("1_78knl")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6imch"]
+atlas = ExtResource("2_audga")
+region = Rect2(252, 0, 84, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2b1m"]
-atlas = ExtResource("1_78knl")
-region = Rect2(128, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmqde"]
+atlas = ExtResource("2_audga")
+region = Rect2(336, 0, 84, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sab83"]
-atlas = ExtResource("1_78knl")
-region = Rect2(160, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_080ej"]
+atlas = ExtResource("2_audga")
+region = Rect2(420, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unl20"]
+atlas = ExtResource("2_audga")
+region = Rect2(504, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_326ef"]
+atlas = ExtResource("2_audga")
+region = Rect2(672, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjy5x"]
+atlas = ExtResource("2_audga")
+region = Rect2(588, 0, 84, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rnyv"]
+atlas = ExtResource("2_audga")
+region = Rect2(756, 0, 84, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prw0q"]
 atlas = ExtResource("2_pg7wo")
@@ -85,26 +101,48 @@ region = Rect2(1008, 0, 84, 38)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6i5fv")
+"texture": SubResource("AtlasTexture_h43bs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_txxdp")
+"texture": SubResource("AtlasTexture_r5p0r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_05bbd")
+"texture": SubResource("AtlasTexture_bx3he")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ay5eo")
+"texture": SubResource("AtlasTexture_6imch")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r2b1m")
+"texture": SubResource("AtlasTexture_wmqde")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sab83")
+"texture": SubResource("AtlasTexture_080ej")
 }],
 "loop": true,
-"name": &"default",
-"speed": 12.0
+"name": &"chameleon_hit1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unl20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_326ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjy5x")
+}],
+"loop": true,
+"name": &"chameleon_hit2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rnyv")
+}],
+"loop": true,
+"name": &"chameleon_hit3",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,8 +185,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_ftfip")
 }],
 "loop": true,
-"name": &"kamæleon",
-"speed": 5.0
+"name": &"chameleon_idle",
+"speed": 11.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu8a2"]
@@ -161,8 +199,8 @@ script = ExtResource("1_w34k3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_ji83h")
-animation = &"kamæleon"
-autoplay = "kamæleon"
+animation = &"chameleon_hit1"
+autoplay = "chameleon_idle"
 
 [node name="Death" parent="." instance=ExtResource("2_rqlrx")]
 
