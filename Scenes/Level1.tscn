@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://deqhy25righ1g"]
+[gd_scene load_steps=34 format=3 uid="uid://deqhy25righ1g"]
 
 [ext_resource type="Texture2D" uid="uid://dmu6smvdk17vj" path="res://Assets/Background/Free Pixel Art Hill/PNG/Hills Layer 01.png" id="1_m0tn6"]
 [ext_resource type="Texture2D" uid="uid://bnao1njhjl7ne" path="res://Assets/Background/Free Pixel Art Hill/PNG/Hills Layer 02.png" id="2_8bugl"]
@@ -10,11 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://c2nurkxiiro75" path="res://Assets/Background/Free Pixel Art Hill/mere_graes.png" id="5_0fpfi"]
 [ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/player.tscn" id="5_4fk7l"]
 [ext_resource type="PackedScene" uid="uid://dxgjys7yydevu" path="res://Scenes/coin.tscn" id="6_p352x"]
-[ext_resource type="Texture2D" uid="uid://d10eevvqpmtur" path="res://Assets/Background/Free Pixel Art Hill/mere_himmel.png" id="6_suyma"]
 [ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/next_level.tscn" id="7_irv8t"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="8_8kjqx"]
 [ext_resource type="PackedScene" uid="uid://wwestjb37hfp" path="res://Scenes/enemy.tscn" id="9_0rexv"]
 [ext_resource type="PackedScene" uid="uid://cmvt6hakvny0e" path="res://Scenes/Spikes.tscn" id="9_gmyfc"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="16_0mmh4"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="16_k4rey"]
 
 [sub_resource type="GDScript" id="GDScript_7vsio"]
@@ -783,7 +783,25 @@ _data = {
 "move": SubResource("Animation_ll3xd")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6nnh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i5it"]
+bg_color = Color(0.530693, 0.103367, 0.341224, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.986782, 0.611591, 0.813648, 0.239216)
+border_blend = true
+shadow_color = Color(1, 1, 1, 0.219608)
+shadow_offset = Vector2(5, 0)
+
+[sub_resource type="Theme" id="Theme_0jejn"]
+Label/styles/normal = SubResource("StyleBoxFlat_1i5it")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcaw6"]
+bg_color = Color(0.467376, 0.0428226, 0.347697, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0hvt"]
+bg_color = Color(0.916762, 0.386683, 0.614688, 1)
 
 [node name="Game" type="Node2D"]
 
@@ -794,17 +812,17 @@ _data = {
 [node name="1" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 position = Vector2(25, -13)
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(800, 0)
+motion_mirroring = Vector2(830, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/1"]
-position = Vector2(207, -103)
+position = Vector2(208, -52)
 scale = Vector2(2, 2)
 texture = ExtResource("1_m0tn6")
 
 [node name="2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 position = Vector2(25, -13)
 motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(800, 0)
+motion_mirroring = Vector2(830, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/2"]
 position = Vector2(207, -103)
@@ -813,17 +831,12 @@ texture = ExtResource("2_8bugl")
 
 [node name="3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 position = Vector2(25, -13)
-motion_mirroring = Vector2(800, 0)
+motion_mirroring = Vector2(830, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/3"]
 position = Vector2(207, -103)
 scale = Vector2(2, 2)
 texture = ExtResource("3_frkcg")
-
-[node name="Himmel" type="Sprite2D" parent="Background"]
-position = Vector2(1079, -505)
-scale = Vector2(6.94518, 1.13971)
-texture = ExtResource("6_suyma")
 
 [node name="Global" type="Node" parent="."]
 unique_name_in_owner = true
@@ -883,15 +896,6 @@ autoplay = "RESET"
 unique_name_in_owner = true
 collision_layer = 2
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, 4)
-zoom = Vector2(2.5, 2.5)
-limit_left = -340
-limit_top = -360
-limit_bottom = 400
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
-
 [node name="NextLevel" parent="." instance=ExtResource("7_irv8t")]
 position = Vector2(2156, -96)
 
@@ -900,7 +904,7 @@ position = Vector2(2156, -96)
 [node name="4" type="ParallaxLayer" parent="Foreground"]
 position = Vector2(25, -13)
 motion_scale = Vector2(1.2, 1.2)
-motion_mirroring = Vector2(800, 0)
+motion_mirroring = Vector2(830, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground/4"]
 position = Vector2(207, -103)
@@ -972,23 +976,30 @@ position = Vector2(1042, -42)
 [node name="Enemy4" parent="Enemies" instance=ExtResource("9_0rexv")]
 position = Vector2(1412, -76)
 
-[node name="Bar" type="CanvasLayer" parent="."]
+[node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="Bar"]
+[node name="Label" type="Label" parent="Interface"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = SubResource("Theme_0jejn")
+script = ExtResource("16_0mmh4")
+
+[node name="HealthBar" type="ProgressBar" parent="Interface"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -78.0
-offset_top = 14.0
+offset_top = 18.0
 offset_right = -14.0
-offset_bottom = 53.0
+offset_bottom = 57.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0.922244, 0.937821, 0.954304, 1)
-theme_override_colors/font_outline_color = Color(0.327166, 0.660074, 0.639164, 1)
-theme_override_styles/fill = SubResource("StyleBoxTexture_e6nnh")
+theme_override_colors/font_color = Color(1, 0.939827, 0.943748, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_qcaw6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e0hvt")
 value = 100.0
 script = ExtResource("16_k4rey")
-
-[node name="Coin_label" type="Label" parent="Bar"]
-offset_right = 40.0
-offset_bottom = 23.0
