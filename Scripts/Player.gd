@@ -20,6 +20,7 @@ func _input(event):
 		if last_keycode == event.keycode and doubletap_time >= 0: 
 		#	print("DOUBLETAP: ", String.chr(event.keycode))
 			last_keycode = 0
+			animated_sprite.play("double_jump")
 		else:
 			last_keycode = event.keycode
 		doubletap_time = DOUBLETAP_DELAY
@@ -52,7 +53,10 @@ func _physics_process(delta):
 			else:
 				animated_sprite.play("run")
 		else: 
-			animated_sprite.play("jump")
+			if velocity.y < 0:
+				animated_sprite.play("jump")
+			else: 
+				animated_sprite.play("fall")
 		
 	if direction:
 		velocity.x = direction * SPEED
