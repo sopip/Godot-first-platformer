@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbntvegy5y5qa"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_gnw03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuwl3"]
+bg_color = Color(0.846494, 0.576514, 0.887001, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 4
+anti_aliasing = false
+anti_aliasing_size = 1.9
+
+[sub_resource type="Theme" id="Theme_pj8rd"]
+Button/styles/normal = SubResource("StyleBoxFlat_cuwl3")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gnw03")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 254.0
+offset_right = 684.0
+offset_bottom = 372.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme = SubResource("Theme_pj8rd")
+text = "Play"
+
+[node name="Options" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme = SubResource("Theme_pj8rd")
+text = "                Music"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme = SubResource("Theme_pj8rd")
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_play_pressed"]
