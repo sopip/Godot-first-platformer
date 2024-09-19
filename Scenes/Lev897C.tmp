@@ -829,6 +829,10 @@ texture = ExtResource("6_suyma")
 unique_name_in_owner = true
 script = SubResource("GDScript_7vsio")
 
+[node name="Coin_label" type="Label" parent="Global"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uwyav")
 format = 2
@@ -986,9 +990,4 @@ grow_horizontal = 0
 theme_override_colors/font_color = Color(0.922244, 0.937821, 0.954304, 1)
 theme_override_colors/font_outline_color = Color(0.327166, 0.660074, 0.639164, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_e6nnh")
-value = 100.0
 script = ExtResource("16_k4rey")
-
-[node name="Coin_label" type="Label" parent="Bar"]
-offset_right = 40.0
-offset_bottom = 23.0
