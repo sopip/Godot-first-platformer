@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7uhmkd5llglx"]
+
+[ext_resource type="Texture2D" uid="uid://c1vcp2xsj8uly" path="res://Assets/Background/Free Simple Pastel Backgrounds/PNG/Sky/SkyNight01.png" id="1_niqkg"]
+[ext_resource type="Texture2D" uid="uid://cr32gpjj0vps0" path="res://Assets/Background/Free Simple Pastel Backgrounds/PNG/Sky/SkyNight02.png" id="2_grpxu"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1"]
+texture = ExtResource("1_niqkg")
+
+[node name="2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2"]
+texture = ExtResource("2_grpxu")
