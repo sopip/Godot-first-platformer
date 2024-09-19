@@ -8,14 +8,15 @@ var time_passed = 0  # Variable to store the accumulated time
 var enemy_hit = false
 var current_chameleon_animation = 1
 
+func _ready():
+	weapon_area.connect("body_entered", Callable(self, "_on_weapon_hit"))
+
 func _physics_process(delta):
 	time_passed += delta  # Increment the time by the delta value
 	
 	if animated_sprite.is_playing():
-		if animated_sprite.frame in range(1,6):
-			collision_shape.shape = RectangleShape2D.new()
-			collision_shape.shape.extents = Vector2(0,0) # størrelse
-			collision_shape.position = Vector2(0, 0) # position
+		if animated_sprite.frame in range(1,6):	
+			collision_shape.disabled = true
 		elif animated_sprite.frame in range(6,8): # lang tunge
 			collision_shape.shape = RectangleShape2D.new()
 			collision_shape.shape.extents = Vector2(36, 7)
@@ -29,9 +30,7 @@ func _physics_process(delta):
 			collision_shape.shape.extents = Vector2(10,7)
 			collision_shape.position = Vector2(10, 0)
 		else: 
-			collision_shape.shape = RectangleShape2D.new()
-			collision_shape.shape.extents = Vector2(0,0)
-			collision_shape.position = Vector2(0, 0)
+			collision_shape.disabled = true
 	
 	if time_passed >= 5:  # Check if 7 seconds have passed
 		print("time passed")
@@ -39,6 +38,7 @@ func _physics_process(delta):
 		time_passed = 0  # Reset the timer after performing the action
 		play_hit()
 		$AnimatedSprite2D.connect("animation_finished", Callable(self, "play_idle"))
+		_on_weapon_hit(weapon_area)
 
 func play_idle():
 	animated_sprite.play("chameleon_idle")
