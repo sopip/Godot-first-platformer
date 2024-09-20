@@ -885,7 +885,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="NextLevel" parent="." instance=ExtResource("7_irv8t")]
-position = Vector2(474, -52)
+position = Vector2(2168, -96)
 
 [node name="Death" parent="." instance=ExtResource("8_8kjqx")]
 
@@ -919,7 +919,7 @@ texture = ExtResource("5_0fpfi")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coins3" parent="Coins" instance=ExtResource("6_p352x")]
-position = Vector2(345, -33)
+position = Vector2(330, -70)
 
 [node name="Coins4" parent="Coins" instance=ExtResource("6_p352x")]
 position = Vector2(443, -167)
@@ -956,7 +956,7 @@ position = Vector2(375, -8)
 position = Vector2(646, -159)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("9_0rexv")]
-position = Vector2(704, -27)
+position = Vector2(705, -31)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("9_0rexv")]
 position = Vector2(1042, -42)
@@ -965,6 +965,6 @@ position = Vector2(1042, -42)
 position = Vector2(1412, -76)
 
 [node name="Enemy" parent="." instance=ExtResource("9_0rexv")]
-position = Vector2(322, -16)
+position = Vector2(315, -16)
 
 [node name="BrugerInterface" parent="." instance=ExtResource("15_j3xqh")]
