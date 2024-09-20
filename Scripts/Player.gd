@@ -4,26 +4,17 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const DOUBLETAP_DELAY = .25
 
-var doubletap_time = DOUBLETAP_DELAY
-var last_keycode = 0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
+# double jump
+var debug_flappybird = true
+
+var jump_count = 0
+var max_jumps = 2
+
+
 @onready var animated_sprite = $AnimatedSprite2D
-
-func _process(delta):
-	doubletap_time -= delta
-
-func _input(event):
-	if event is InputEventKey and event.is_pressed():
-		if last_keycode == event.keycode and doubletap_time >= 0: 
-		#	print("DOUBLETAP: ", String.chr(event.keycode))
-			last_keycode = 0
-			animated_sprite.play("double_jump")
-		else:
-			last_keycode = event.keycode
-		doubletap_time = DOUBLETAP_DELAY
 
 func _ready():
 	pass
@@ -34,10 +25,17 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	if is_on_floor():
+		jump_count = 0
 	
 	# hopper
-	if Input.is_action_just_pressed("w") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("w") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept"):
+		if debug_flappybird == false and jump_count < max_jumps:
+			velocity.y = JUMP_VELOCITY
+			jump_count += 1
+		elif debug_flappybird == true: 
+			velocity.y = JUMP_VELOCITY
 	
 	# tjekker for flip retning
 	var direction = 0
