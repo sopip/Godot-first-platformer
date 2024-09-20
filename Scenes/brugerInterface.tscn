@@ -1,12 +1,22 @@
 [gd_scene load_steps=10 format=3 uid="uid://d05lfnm1nmcai"]
 
-[ext_resource type="StyleBox" uid="uid://cmf1ogj0y1pb6" path="res://Scenes/lyseroedlabel.tres" id="1_b12lj"]
 [ext_resource type="Script" path="res://Scripts/Label.gd" id="1_hlwju"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="2_amclg"]
 [ext_resource type="Script" path="res://Scenes/hjertertilbage.gd" id="3_prppf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac4tb"]
+bg_color = Color(0.933685, 0.437525, 0.677396, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.986782, 0.611591, 0.813648, 0.239216)
+border_blend = true
+shadow_color = Color(1, 1, 1, 0.219608)
+shadow_offset = Vector2(5, 0)
+
 [sub_resource type="Theme" id="Theme_q8rds"]
-Label/styles/normal = ExtResource("1_b12lj")
+Label/styles/normal = SubResource("StyleBoxFlat_ac4tb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r46i2"]
 bg_color = Color(0.467376, 0.0428226, 0.347697, 1)
