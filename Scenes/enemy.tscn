@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cn60c")
 }],
-"loop": true,
+"loop": false,
 "name": &"chameleon_hit",
 "speed": 11.0
 }, {

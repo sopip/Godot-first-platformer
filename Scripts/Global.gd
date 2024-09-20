@@ -5,6 +5,8 @@ var health = 100
 var prev_health = 100
 var hiit = false
 
+var enemy_killed = false
+
 @onready var coin_label = $Global/Coin_label
 
 #Coin_label.text = "Du har samlet" , antal , "mønter"

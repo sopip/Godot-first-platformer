@@ -24,6 +24,7 @@ func _physics_process(delta):
 	#	time_pass()
 		#_on_weapon_hit(weapon_area)
 
+# bruges ikke
 func time_pass():
 	print("time passed")
 	enemy_hit = true
@@ -37,35 +38,40 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		print("body entered")
 		Global.health -= 25
+	
 
+# bruges ikke
 func play_idle():
 	print("idle")
 	animated_sprite.play("chameleon_idle")
 	enemy_hit = false
 
 func play_hit(): # skal også fikses
-	var die = $ded
-	die.play()
-	#print("playhit")
-	animated_sprite.play("chameleon_attack")
-	
-	if animated_sprite.is_playing():
-		if animated_sprite.frame in range(1,6):
-			collision_shape.disabled = true
-		elif animated_sprite.frame in range(6,8): # lang tunge
-			collision_shape.disabled = false
-			var shape = collision_shape.shape as RectangleShape2D
-			shape.extents = Vector2(36, 7)
-			collision_shape.position = Vector2(10, 0)
-		elif animated_sprite.frame == 8: # mellemlang tunge
-			collision_shape.disabled = false
-			var shape = collision_shape.shape as RectangleShape2D
-			shape.extents = Vector2(25,7)
-			collision_shape.position = Vector2(10, 0)
-		elif animated_sprite.frame == 9: # kort tunge
-			collision_shape.disabled = false
-			var shape = collision_shape.shape as RectangleShape2D
-			shape.extents = Vector2(10,7)
-			collision_shape.position = Vector2(10, 0)
-		else: 
-			collision_shape.disabled = true
+	if Global.enemy_killed == false:
+		var die = $ded
+		die.play()
+		#print("playhit")
+		animated_sprite.play("chameleon_attack")
+		
+		if animated_sprite.is_playing():
+			if animated_sprite.frame in range(1,6):
+				collision_shape.disabled = true
+			elif animated_sprite.frame in range(6,8): # lang tunge
+				collision_shape.disabled = false
+				var shape = collision_shape.shape as RectangleShape2D
+				shape.extents = Vector2(36, 7)
+				collision_shape.position = Vector2(10, 0)
+			elif animated_sprite.frame == 8: # mellemlang tunge
+				collision_shape.disabled = false
+				var shape = collision_shape.shape as RectangleShape2D
+				shape.extents = Vector2(25,7)
+				collision_shape.position = Vector2(10, 0)
+			elif animated_sprite.frame == 9: # kort tunge
+				collision_shape.disabled = false
+				var shape = collision_shape.shape as RectangleShape2D
+				shape.extents = Vector2(10,7)
+				collision_shape.position = Vector2(10, 0)
+			else: 
+				collision_shape.disabled = true
+	else: 
+		collision_shape.disabled = true

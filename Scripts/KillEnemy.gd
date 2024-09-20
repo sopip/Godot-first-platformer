@@ -9,20 +9,19 @@ extends Area2D
 func _ready():
 	collision_shape.connect("body_entered", Callable(self, "_on_Area2D_body_entered"))
 
-
-
 func _on_body_entered(body):
 	print("JUVBIBBIIBI")
+	Global.enemy_killed = true
 	if body.is_in_group("player"):  # hvis kollisionen er med spilleren
 		collision_shape.disabled = true
 		weapon_collision.disabled = true
 		death_collision.disabled = true
 		animated_sprite.play("chameleon_hit")  # skift til collected animation
 		
-		animated_sprite.connect("animation_finished", Callable(self, "die"))
+		animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 
-func die():
+func _on_animation_finished():
 	print("good job")
 	queue_free()
 	#animation
