@@ -59,5 +59,5 @@ func play_hit(): # skal også fikses
 				collision_shape.disabled = true
 	else: 
 		collision_shape.disabled = true
-		queue_free()
-		Global.enemy_killed = false
+		#queue_free()
+		#Global.enemy_killed = false

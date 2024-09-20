@@ -19,12 +19,12 @@ func _on_body_entered(body):
 		
 		animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
-@onready var enemy = $Game/Enemies/Enemy
-#@onready var enemy = $".."
+#@onready var enemy = $Game/Enemies/Enemy
+@onready var enemy = $".."
 
 func _on_animation_finished():
 	print("good job")
-	#enemy.queue_free()
+	enemy.queue_free()
 	#animation
 	#clear
 
