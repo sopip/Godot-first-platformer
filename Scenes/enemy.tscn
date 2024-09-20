@@ -1,12 +1,12 @@
 [gd_scene load_steps=39 format=3 uid="uid://wwestjb37hfp"]
 
-[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_w34k3"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_w34k3"]
 [ext_resource type="Texture2D" uid="uid://d16vhel67x468" path="res://Assets/Enemies/Chameleon/Attack (84x38).png" id="2_audga"]
 [ext_resource type="Texture2D" uid="uid://thvee35ubt7" path="res://Assets/Enemies/Chameleon/Idle (84x38).png" id="2_pg7wo"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="2_rqlrx"]
 [ext_resource type="Texture2D" uid="uid://de3kebp3yxkbh" path="res://Assets/Enemies/Chameleon/Hit (84x38).png" id="3_54yjs"]
 [ext_resource type="AudioStream" uid="uid://cht8dhen7yxsf" path="res://Assets/Sound/Sound effects/enemyDies.mp3" id="5_judpy"]
-[ext_resource type="Script" path="res://Scenes/KillEnemy.gd" id="6_6ups6"]
+[ext_resource type="Script" path="res://Scripts/KillEnemy.gd" id="6_6ups6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnbqo"]
 atlas = ExtResource("2_audga")
