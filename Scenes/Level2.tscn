@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="1_p1n5c"]
 [ext_resource type="Texture2D" uid="uid://b231e64exfktb" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Background.png" id="1_y11ef"]
-[ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/player.tscn" id="2_ct1by"]
+[ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/Player.tscn" id="2_ct1by"]
 [ext_resource type="Texture2D" uid="uid://ey86htuou2po" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/topbaggrund.png" id="2_gpn1b"]
 [ext_resource type="Texture2D" uid="uid://b7sgukarql4ca" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 1 anim1.png" id="2_pub03"]
 [ext_resource type="Texture2D" uid="uid://bkqgf5k38hh2y" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 1 anim2.png" id="3_eivdb"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b77ctx32enyqg" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 3 anim1.png" id="4_3wn88"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="4_xekq5"]
 [ext_resource type="Texture2D" uid="uid://ugs2gbsu6itn" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 3 anim2.png" id="5_0bp50"]
-[ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/next_level.tscn" id="5_gkr2x"]
+[ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/Next_level.tscn" id="5_gkr2x"]
 [ext_resource type="Texture2D" uid="uid://blebj877fgq0u" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 3 clound anim1.png" id="6_0y76h"]
 [ext_resource type="Texture2D" uid="uid://bninj1dacj88y" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 4 anim1.png" id="6_4begg"]
 [ext_resource type="Texture2D" uid="uid://bxiidsvrnbabn" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 4 anim2.png" id="7_3g7o6"]
