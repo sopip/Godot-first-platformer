@@ -6,8 +6,8 @@ func _ready():
 	print(global_position)
 
 func _on_body_entered(body):
-	print("her")
-	print(body.name)
+	#print("her")
+	#print(body.name)
 	
 	if body.is_in_group("player") and not collected:  # hvis kollisionen er med spilleren
 		collected = true
