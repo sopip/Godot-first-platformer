@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="2_amclg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i5it"]
-bg_color = Color(0.530693, 0.103367, 0.341224, 1)
+bg_color = Color(0.933685, 0.437525, 0.677396, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -30,8 +30,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
+offset_top = 20.0
 offset_right = 20.0
-offset_bottom = 29.0
+offset_bottom = 49.0
 grow_horizontal = 2
 theme = SubResource("Theme_q8rds")
 script = ExtResource("1_hlwju")

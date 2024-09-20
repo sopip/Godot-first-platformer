@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2gtruxqo4ghp"]
+[gd_scene load_steps=8 format=3 uid="uid://c2gtruxqo4ghp"]
 
 [ext_resource type="Texture2D" uid="uid://cwmig6y4vmloc" path="res://Assets/Background/Free Simple Pastel Backgrounds/PNG/City/City2.png" id="1_pjao6"]
 [ext_resource type="Texture2D" uid="uid://cjto2mwwooqxt" path="res://Assets/Background/Free Simple Pastel Backgrounds/PNG/City/City.png" id="2_jtjiy"]
 [ext_resource type="Script" path="res://Scenes/Knapper.gd" id="4_bwi7h"]
 [ext_resource type="PackedScene" uid="uid://d05lfnm1nmcai" path="res://Scenes/brugerInterface.tscn" id="4_x4jpr"]
+[ext_resource type="AudioStream" uid="uid://dwdl4lmpmifwo" path="res://Assets/Sound/Sound effects/YIPPIE.mp3" id="5_k22ag"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuwl3"]
 bg_color = Color(0.846494, 0.576514, 0.887001, 1)
@@ -26,13 +27,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_cuwl3")
 
 [node name="Level4" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 428.0
-offset_top = 318.0
-offset_right = 754.0
-offset_bottom = 341.0
-text = "JUBI DU KLAREDE SPILLET GODT LAVET!!!!"
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(2.5, 2.5)
 transform = Transform2D(2.5, 0, 0, 2.5, 0, 0)
@@ -49,6 +43,13 @@ texture = ExtResource("2_jtjiy")
 
 [node name="BrugerInterface" parent="." instance=ExtResource("4_x4jpr")]
 
+[node name="Label2" type="Label" parent="BrugerInterface"]
+offset_left = 428.0
+offset_top = 318.0
+offset_right = 754.0
+offset_bottom = 341.0
+text = "JUBI DU KLAREDE SPILLET GODT LAVET!!!!"
+
 [node name="Knapper" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -58,10 +59,10 @@ script = ExtResource("4_bwi7h")
 
 [node name="MarginContainer" type="MarginContainer" parent="Knapper"]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 379.0
-offset_right = 687.0
-offset_bottom = 497.0
+offset_left = 489.0
+offset_top = 369.0
+offset_right = 673.0
+offset_bottom = 487.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Knapper/MarginContainer"]
 texture_filter = 2
@@ -79,6 +80,11 @@ texture_filter = 2
 layout_mode = 2
 theme = SubResource("Theme_e6m87")
 text = "Quit"
+
+[node name="Yippie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_k22ag")
+volume_db = -14.991
+pitch_scale = 1.36
 
 [connection signal="pressed" from="Knapper/MarginContainer/VBoxContainer/Play" to="Knapper" method="_on_play_pressed"]
 [connection signal="pressed" from="Knapper/MarginContainer/VBoxContainer/Quit" to="Knapper" method="_on_quit_pressed"]
