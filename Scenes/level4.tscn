@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2gtruxqo4ghp"]
+
+[ext_resource type="Texture2D" uid="uid://cwmig6y4vmloc" path="res://Assets/Background/Free Simple Pastel Backgrounds/PNG/City/City2.png" id="1_pjao6"]
+[ext_resource type="Texture2D" uid="uid://cjto2mwwooqxt" path="res://Assets/Background/Free Simple Pastel Backgrounds/PNG/City/City.png" id="2_jtjiy"]
+[ext_resource type="Script" path="res://Scenes/Knapper.gd" id="4_bwi7h"]
+[ext_resource type="PackedScene" uid="uid://d05lfnm1nmcai" path="res://Scenes/brugerInterface.tscn" id="4_x4jpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuwl3"]
+bg_color = Color(0.846494, 0.576514, 0.887001, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 4
+anti_aliasing = false
+anti_aliasing_size = 1.9
+
+[sub_resource type="Theme" id="Theme_e6m87"]
+Button/styles/normal = SubResource("StyleBoxFlat_cuwl3")
+
+[node name="Level4" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 428.0
+offset_top = 318.0
+offset_right = 754.0
+offset_bottom = 341.0
+text = "JUBI DU KLAREDE SPILLET GODT LAVET!!!!"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(2.5, 2.5)
+transform = Transform2D(2.5, 0, 0, 2.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(106.8, 20)
+motion_mirroring = Vector2(250, 220)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_pjao6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_jtjiy")
+
+[node name="BrugerInterface" parent="." instance=ExtResource("4_x4jpr")]
+
+[node name="Knapper" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_bwi7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="Knapper"]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 379.0
+offset_right = 687.0
+offset_bottom = 497.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Knapper/MarginContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Play" type="Button" parent="Knapper/MarginContainer/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme = SubResource("Theme_e6m87")
+text = "Spil igen"
+
+[node name="Quit" type="Button" parent="Knapper/MarginContainer/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme = SubResource("Theme_e6m87")
+text = "Quit"
+
+[connection signal="pressed" from="Knapper/MarginContainer/VBoxContainer/Play" to="Knapper" method="_on_play_pressed"]
+[connection signal="pressed" from="Knapper/MarginContainer/VBoxContainer/Quit" to="Knapper" method="_on_quit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqcuasqoofqjc"]
+[gd_scene load_steps=27 format=3 uid="uid://bqcuasqoofqjc"]
 
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="1_p1n5c"]
 [ext_resource type="Texture2D" uid="uid://b231e64exfktb" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Background.png" id="1_y11ef"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bhnbbgaimi8lv" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 3 clound anim2.png" id="7_jhsdm"]
 [ext_resource type="PackedScene" uid="uid://c8dxwenhard6o" path="res://Scenes/disappearing_platform.tscn" id="15_ra5s6"]
 [ext_resource type="PackedScene" uid="uid://cmvt6hakvny0e" path="res://Scenes/Spikes.tscn" id="16_uhthy"]
+[ext_resource type="PackedScene" uid="uid://d05lfnm1nmcai" path="res://Scenes/brugerInterface.tscn" id="18_iwoi1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sahug"]
 animations = [{
@@ -733,9 +734,6 @@ limit_bottom = 220
 
 [node name="Death" parent="." instance=ExtResource("4_xekq5")]
 
-[node name="Next Level" parent="." instance=ExtResource("5_gkr2x")]
-position = Vector2(698, 174)
-
 [node name="Forgrunden" type="ParallaxLayer" parent="."]
 position = Vector2(-957, 220)
 scale = Vector2(2, 2)
@@ -831,3 +829,9 @@ collision_mask = 3
 [node name="Coin6" parent="Coins" instance=ExtResource("3_jw5mp")]
 position = Vector2(1472, 46)
 collision_mask = 3
+
+[node name="Next_level" parent="." instance=ExtResource("5_gkr2x")]
+position = Vector2(702, 174)
+collision_mask = 3
+
+[node name="BrugerInterface" parent="." instance=ExtResource("18_iwoi1")]

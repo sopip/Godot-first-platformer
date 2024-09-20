@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_gnw03"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuwl3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl1sm"]
 bg_color = Color(0.846494, 0.576514, 0.887001, 1)
 border_width_left = 4
 border_width_top = 4
@@ -19,7 +19,7 @@ anti_aliasing = false
 anti_aliasing_size = 1.9
 
 [sub_resource type="Theme" id="Theme_pj8rd"]
-Button/styles/normal = SubResource("StyleBoxFlat_cuwl3")
+Button/styles/normal = SubResource("StyleBoxFlat_nl1sm")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -53,5 +53,5 @@ theme = SubResource("Theme_pj8rd")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

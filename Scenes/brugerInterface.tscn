@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://d05lfnm1nmcai"]
+
+[ext_resource type="Script" path="res://Scripts/Label.gd" id="1_hlwju"]
+[ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="2_amclg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i5it"]
+bg_color = Color(0.530693, 0.103367, 0.341224, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.986782, 0.611591, 0.813648, 0.239216)
+border_blend = true
+shadow_color = Color(1, 1, 1, 0.219608)
+shadow_offset = Vector2(5, 0)
+
+[sub_resource type="Theme" id="Theme_q8rds"]
+Label/styles/normal = SubResource("StyleBoxFlat_1i5it")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r46i2"]
+bg_color = Color(0.467376, 0.0428226, 0.347697, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1wjx"]
+bg_color = Color(0.916762, 0.386683, 0.614688, 1)
+
+[node name="BrugerInterface" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme = SubResource("Theme_q8rds")
+script = ExtResource("1_hlwju")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 18.0
+offset_right = -14.0
+offset_bottom = 57.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.939827, 0.943748, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_r46i2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v1wjx")
+value = 100.0
+script = ExtResource("2_amclg")
