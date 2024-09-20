@@ -17,8 +17,7 @@ func _process(delta):
 		die()
 
 func die():
-	var ded = $playerDies
-	ded.play()
+	$playerDies.play() #spiller sound effect
 	get_tree().reload_current_scene()
 	print("antal nullll")
 	Global.antal = 0

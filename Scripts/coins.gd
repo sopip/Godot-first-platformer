@@ -1,21 +1,20 @@
 extends Area2D
-
 var collected = false
 
 func _ready():
 	$AnimatedSprite2D.play("banan") # her kan man ændre mønten 
+	print(global_position)
 
 func _on_body_entered(body):
-	# print("hello")
-	var collectfruit = $collectFruit
-	
+	print("her")
+	print(body.name)
 	
 	if body.is_in_group("player") and not collected:  # hvis kollisionen er med spilleren
 		collected = true
 		$CollisionShape2D.disabled = true
 		
 		$AnimatedSprite2D.play("collected")  # skift til collected animation
-		collectfruit.play() #Spiller lyden til når man samler en frugt
+		$collectFruit.play() #Spiller lyden til når man samler en frugt
 		
 		Global.antal += 1
 		print("jubi du har samlet " , Global.antal , " frugter")

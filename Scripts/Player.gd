@@ -69,7 +69,8 @@ func _physics_process(delta):
 		animated_sprite.play("hit")
 		ouch.play()
 		$AnimatedSprite2D.connect("animation_finished", Callable(self, "hitfalse"))
-		
+	
+	#print(global_position)
 	move_and_slide()
 
 func hitfalse():
