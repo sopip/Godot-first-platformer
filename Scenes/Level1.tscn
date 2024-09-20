@@ -896,6 +896,15 @@ autoplay = "RESET"
 unique_name_in_owner = true
 collision_layer = 2
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, 4)
+zoom = Vector2(2.5, 2.5)
+limit_left = -340
+limit_top = -400
+limit_bottom = 400
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
 [node name="NextLevel" parent="." instance=ExtResource("7_irv8t")]
 position = Vector2(2156, -96)
 
