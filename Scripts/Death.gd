@@ -16,9 +16,12 @@ func _on_timer_timeout():
 func _process(delta):
 	if Global.health == 0:
 		die()
+	if Global.hjerter == 3:
+		get_tree().change_scene_to_file("res://Scenes/Level4.tscn")
 
 func die():
 	#if Global.enemy_killed == false:
+	Global.hjerter +=1
 	get_tree().reload_current_scene()
 	print("antal nullll")
 	Global.antal = 0

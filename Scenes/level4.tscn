@@ -44,11 +44,12 @@ texture = ExtResource("2_jtjiy")
 [node name="BrugerInterface" parent="." instance=ExtResource("4_x4jpr")]
 
 [node name="Label2" type="Label" parent="BrugerInterface"]
-offset_left = 428.0
-offset_top = 318.0
-offset_right = 754.0
-offset_bottom = 341.0
-text = "JUBI DU KLAREDE SPILLET GODT LAVET!!!!"
+offset_left = 367.0
+offset_top = 301.0
+offset_right = 1266.0
+offset_bottom = 350.0
+text = "Spillet er ovre fordi du er død 3 gange eller klarede det hele. 
+Vælg en knap nedenfor med hvad du vil foretage dig nu:"
 
 [node name="Knapper" type="Control" parent="."]
 layout_mode = 3
