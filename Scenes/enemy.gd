@@ -31,13 +31,10 @@ func _on_Area2D_body_entered(body):
 func play_idle():
 	animated_sprite.play("chameleon_idle")
 
-<<<<<<< Updated upstream
-func play_hit():
+
+func play_hit(): # skal også fikses
 	var die = $ded
 	die.play()
-=======
-func play_hit(): # skal også fikses
->>>>>>> Stashed changes
 	print("playhit")
 	animated_sprite.play("chameleon_attack")
 	
