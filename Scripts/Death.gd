@@ -2,6 +2,7 @@ extends Area2D
 # indgår i spikes
 
 @onready var timer = $Timer
+@onready var animated_sprite = $"../AnimatedSprite2D"
 
 func _on_body_entered(body):
 	$playerDies.play() #spiller sound effect

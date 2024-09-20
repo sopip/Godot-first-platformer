@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dgpllv31kmsml"]
+[gd_scene load_steps=20 format=3 uid="uid://dgpllv31kmsml"]
 
 [ext_resource type="Texture2D" uid="uid://c8bw4wn07mhdq" path="res://Assets/Enemies/Mushroom/Idle (32x32).png" id="1_euvnj"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="1_hw7w7"]
+[ext_resource type="Script" path="res://Scenes/enemy2.gd" id="1_mn6rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pakw"]
 atlas = ExtResource("1_euvnj")
@@ -113,6 +114,7 @@ animations = [{
 size = Vector2(18, 14)
 
 [node name="Mushroom" type="Node2D"]
+script = ExtResource("1_mn6rc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -122,6 +124,6 @@ autoplay = "default"
 [node name="Death" parent="." instance=ExtResource("1_hw7w7")]
 collision_mask = 1
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Death"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0hym8")
