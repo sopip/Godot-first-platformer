@@ -331,4 +331,4 @@ position_smoothing_speed = 8.0
 [node name="ouch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_ytiq5")
 volume_db = -12.47
-pitch_scale = 2.01
+pitch_scale = 2.23
