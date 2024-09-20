@@ -175,7 +175,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"chameleon_hit",
-"speed": 11.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,

@@ -12,6 +12,8 @@ var debug_flappybird = false
 var jump_count = 0
 var max_jumps = 2
 
+var double_jump = false
+
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready():
@@ -29,13 +31,17 @@ func _physics_process(delta):
 	
 	# hopper
 	if Input.is_action_just_pressed("w") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept"):
+		
 		if debug_flappybird == false and jump_count < max_jumps:
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 			# DOUBLE JUMP ANIMATION HER
+			if jump_count == 2:
+				double_jump = true
+			
 		elif debug_flappybird == true: 
 			velocity.y = JUMP_VELOCITY
-	
+			
 	# tjekker for flip retning
 	var direction = 0
 
@@ -51,15 +57,19 @@ func _physics_process(delta):
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		
-	if Global.hiit == false: # eventuelt?
+	if Global.hiit == false: # eventuelt
 		if is_on_floor():
 			if direction == 0:
 				animated_sprite.play("idle")
 			else:
 				animated_sprite.play("run")
 		else: 
-			if velocity.y < 0:
+			if velocity.y < 0 and double_jump == false:
 				animated_sprite.play("jump")
+			elif double_jump == true: 
+				animated_sprite.play("double_jump")
+				$AnimatedSprite2D.connect("animation_finished", Callable(self, "double_jump_false"))
+				#print(animated_sprite.animation)
 			else: 
 				animated_sprite.play("fall")
 		
@@ -75,6 +85,10 @@ func _physics_process(delta):
 	
 	#print(global_position)
 	move_and_slide()
+
+func double_jump_false():
+	double_jump = false
+	#print("double jump falseeee")
 
 func hitfalse():
 	Global.hiit = false

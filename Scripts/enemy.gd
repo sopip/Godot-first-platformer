@@ -31,7 +31,7 @@ func _on_Area2D_body_entered(body):
 		Global.health -= 25
 
 func play_hit(): # skal også fikses
-	if Global.enemy_killed == false:
+	if Global.enemy_killed == false: # this is the culprit
 		var die = $ded
 		die.play()
 		#print("playhit")
@@ -59,3 +59,5 @@ func play_hit(): # skal også fikses
 				collision_shape.disabled = true
 	else: 
 		collision_shape.disabled = true
+		queue_free()
+		Global.enemy_killed = false

@@ -178,9 +178,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b731i")
 }],
-"loop": true,
+"loop": false,
 "name": &"double_jump",
-"speed": 11.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,7 +312,7 @@ script = ExtResource("1_j8458")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_d0h3b")
-animation = &"fall"
+animation = &"double_jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
