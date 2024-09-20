@@ -6,13 +6,11 @@ const DOUBLETAP_DELAY = .25
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 # double jump
-var debug_flappybird = true
+var debug_flappybird = false
 
 var jump_count = 0
 var max_jumps = 2
-
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -34,6 +32,7 @@ func _physics_process(delta):
 		if debug_flappybird == false and jump_count < max_jumps:
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
+			# DOUBLE JUMP ANIMATION HER
 		elif debug_flappybird == true: 
 			velocity.y = JUMP_VELOCITY
 	
