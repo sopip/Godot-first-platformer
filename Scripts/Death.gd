@@ -4,6 +4,7 @@ extends Area2D
 @onready var timer = $Timer
 
 func _on_body_entered(body):
+	$playerDies.play() #spiller sound effect
 	timer.start()
 	die()
 	print("you died womp womp")
@@ -18,7 +19,6 @@ func _process(delta):
 
 func die():
 	#if Global.enemy_killed == false:
-	$playerDies.play() #spiller sound effect
 	get_tree().reload_current_scene()
 	print("antal nullll")
 	Global.antal = 0

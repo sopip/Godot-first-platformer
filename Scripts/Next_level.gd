@@ -4,11 +4,8 @@ const FILE_BEGIN = "res://Scenes/Level"
 
 func _on_body_entered(body):
 	$CollisionShape2D.disabled = false
-	# print("hello")
-	
 	
 	if body.is_in_group("player"):  # hvis kollisionen er med spilleren
-		# print("hello")
 		var current_scene_file = get_tree().current_scene.scene_file_path
 		var next_level_number = current_scene_file.to_int() + 1
 		

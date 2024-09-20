@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8dxwenhard6o"]
 
-[ext_resource type="Script" path="res://Disappearing_platform.gd" id="1_0206x"]
+[ext_resource type="Script" path="res://Scripts/Disappearing_platform.gd" id="1_0206x"]
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="2_l3nsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kae0b"]
