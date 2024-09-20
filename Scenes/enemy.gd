@@ -13,29 +13,41 @@ func _ready():
 	weapon_area.connect("body_entered", Callable(self, "_on_Area2D_body_entered"))
 	if collision_shape.shape == null:
 		collision_shape.shape = RectangleShape2D.new()
+	#print("Weapon Area Layer: ", weapon_area.collision_layer)
+	#print("Weapon Area Mask: ", weapon_area.collision_mask)
 
 func _physics_process(delta):
-	time_passed += delta  # Increment the time by the delta value
-	
-	if time_passed >= 5 and not enemy_hit:  # Check if 7 seconds have passed
-		#print("time passed")
-		#enemy_hit = true
-		play_hit()		
-		time_passed = 0  # Reset the timer after performing the action
+	#time_passed += delta  # Increment the time by the delta value
+	play_hit()
+	#print(time_passed)
+	#if time_passed >= 5 and not enemy_hit:
+	#	time_pass()
+		
 		#_on_weapon_hit(weapon_area)
 
+func time_pass():
+	print("time passed")
+	enemy_hit = true
+	time_passed = 0  
+	play_hit()
+
 func _on_Area2D_body_entered(body):
+	print(body)
+	print("body entered")
+	
 	if body.is_in_group("player"):
 		print("body entered")
+		Global.health -= 25
 
 func play_idle():
+	print("idle")
 	animated_sprite.play("chameleon_idle")
-
+	enemy_hit = false
 
 func play_hit(): # skal også fikses
 	var die = $ded
 	die.play()
-	print("playhit")
+	#print("playhit")
 	animated_sprite.play("chameleon_attack")
 	
 	if animated_sprite.is_playing():
@@ -58,13 +70,3 @@ func play_hit(): # skal også fikses
 			collision_shape.position = Vector2(10, 0)
 		else: 
 			collision_shape.disabled = true
-	animated_sprite.connect("animation_finished", Callable(self, "play_idle"))
-	
-	#set_physics_process(true) # skal fikses
-
-	#animated_sprite.connect("animation_finished", Callable(self, "_on_hit_animation_finished"))
-
-func _on_weapon_hit():
-	#Global.health -= 25
-	print("weapon hit")
-	# her skal den trække fra health

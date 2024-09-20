@@ -26,7 +26,8 @@ func _input(event):
 		doubletap_time = DOUBLETAP_DELAY
 
 func _ready():
-	add_to_group("player")
+	pass
+	#add_to_group("player")
 
 func _physics_process(delta):
 	var ouch = $ouch
