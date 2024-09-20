@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqcuasqoofqjc"]
+[gd_scene load_steps=25 format=3 uid="uid://bqcuasqoofqjc"]
 
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="1_p1n5c"]
 [ext_resource type="Texture2D" uid="uid://b231e64exfktb" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Background.png" id="1_y11ef"]
@@ -659,6 +659,14 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_6adbf")
 sources/0 = SubResource("TileSetAtlasSource_mpqpk")
 
+[sub_resource type="GDScript" id="GDScript_q6hvo"]
+script/source = "extends Node
+
+var antal = 0
+var health = 100
+var prev_health = 100
+"
+
 [node name="Game" type="Node2D"]
 position = Vector2(877, -136)
 
@@ -727,20 +735,6 @@ position = Vector2(-869, 201)
 [node name="Next Level" parent="." instance=ExtResource("5_gkr2x")]
 position = Vector2(698, 174)
 
-[node name="Coins" type="Node" parent="."]
-
-[node name="Coin" parent="Coins" instance=ExtResource("3_jw5mp")]
-position = Vector2(962, -181)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("3_jw5mp")]
-position = Vector2(300, 55)
-
-[node name="Coin3" parent="Coins" instance=ExtResource("3_jw5mp")]
-position = Vector2(799, -2)
-
-[node name="Coin4" parent="Coins" instance=ExtResource("3_jw5mp")]
-position = Vector2(961, -113)
-
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Disappearing_platform2" parent="Platforms" instance=ExtResource("15_ra5s6")]
@@ -767,11 +761,38 @@ position = Vector2(919, -99)
 [node name="Disappearing_platform8" parent="Platforms" instance=ExtResource("15_ra5s6")]
 position = Vector2(978, -123)
 
-[node name="Enemy" parent="." instance=ExtResource("16_uhthy")]
-position = Vector2(-477, 183)
+[node name="Spikes" type="Node" parent="."]
 
-[node name="Enemy2" parent="." instance=ExtResource("16_uhthy")]
-position = Vector2(-246, 215)
+[node name="Enemy" parent="Spikes" instance=ExtResource("16_uhthy")]
+position = Vector2(400, 47)
+collision_mask = 3
 
-[node name="Enemy3" parent="." instance=ExtResource("16_uhthy")]
-position = Vector2(544, 198)
+[node name="Enemy2" parent="Spikes" instance=ExtResource("16_uhthy")]
+position = Vector2(631, 79)
+collision_mask = 3
+
+[node name="Enemy3" parent="Spikes" instance=ExtResource("16_uhthy")]
+position = Vector2(1421, 62)
+collision_mask = 3
+
+[node name="Global" type="Node" parent="."]
+unique_name_in_owner = true
+script = SubResource("GDScript_q6hvo")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("3_jw5mp")]
+position = Vector2(304, 56)
+collision_mask = 3
+
+[node name="Coin" parent="." instance=ExtResource("3_jw5mp")]
+position = Vector2(-415, 167)
+
+[node name="Coin2" parent="." instance=ExtResource("3_jw5mp")]
+position = Vector2(-47, 90)
+
+[node name="Coin3" parent="." instance=ExtResource("3_jw5mp")]
+position = Vector2(432, 18)
+
+[node name="Coin4" parent="." instance=ExtResource("3_jw5mp")]
+position = Vector2(603, 172)
