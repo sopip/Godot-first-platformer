@@ -249,7 +249,7 @@ collision_mask = 2
 script = ExtResource("6_6ups6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillEnemy"]
-position = Vector2(-56, 5)
+position = Vector2(16, -8)
 shape = SubResource("RectangleShape2D_15dam")
 
 [node name="Death" parent="." instance=ExtResource("2_rqlrx")]
@@ -257,6 +257,7 @@ shape = SubResource("RectangleShape2D_15dam")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Death"]
 position = Vector2(16, 7.5)
 shape = SubResource("RectangleShape2D_jxyqe")
+disabled = true
 
 [node name="ded" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_judpy")

@@ -5,6 +5,7 @@ extends Area2D
 @onready var weapon_collision = $"../WeaponArea/CollisionShape2D"
 @onready var death_collision = $"../Death/CollisionShape2D2"
 @onready var animated_sprite = $"../AnimatedSprite2D"
+@onready var death = $"../Death"
 
 func _ready():
 	collision_shape.connect("body_entered", Callable(self, "_on_Area2D_body_entered"))
@@ -16,14 +17,19 @@ func _on_body_entered(body):
 		collision_shape.disabled = true
 		weapon_collision.disabled = true
 		death_collision.disabled = true
+		
+		kill_enemy.disable_mode = true
+		death.disable_mode = true
+		
 		animated_sprite.play("chameleon_hit")  # skift til collected animation
 		
 		animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
+@onready var enemy = $".."
 
 func _on_animation_finished():
 	print("good job")
-	queue_free()
+	enemy.queue_free()
 	#animation
 	#clear
 

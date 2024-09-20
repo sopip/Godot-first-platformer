@@ -17,6 +17,7 @@ func _process(delta):
 		die()
 
 func die():
+	#if Global.enemy_killed == false:
 	$playerDies.play() #spiller sound effect
 	get_tree().reload_current_scene()
 	print("antal nullll")
