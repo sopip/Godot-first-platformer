@@ -22,7 +22,6 @@ func _physics_process(delta):
 	#print(time_passed)
 	#if time_passed >= 5 and not enemy_hit:
 	#	time_pass()
-		
 		#_on_weapon_hit(weapon_area)
 
 func time_pass():

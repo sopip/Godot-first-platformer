@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c2nurkxiiro75" path="res://Assets/Background/Free Pixel Art Hill/mere_graes.png" id="5_0fpfi"]
 [ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/player.tscn" id="5_4fk7l"]
 [ext_resource type="PackedScene" uid="uid://dxgjys7yydevu" path="res://Scenes/coin.tscn" id="6_p352x"]
-[ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/Next_level.tscn" id="7_irv8t"]
+[ext_resource type="PackedScene" uid="uid://befb3dxabt3sa" path="res://Scenes/next_level.tscn" id="7_irv8t"]
 [ext_resource type="PackedScene" uid="uid://dvbeyc4segiht" path="res://Scenes/Death.tscn" id="8_8kjqx"]
 [ext_resource type="PackedScene" uid="uid://wwestjb37hfp" path="res://Scenes/enemy.tscn" id="9_0rexv"]
 [ext_resource type="PackedScene" uid="uid://cmvt6hakvny0e" path="res://Scenes/Spikes.tscn" id="9_gmyfc"]
