@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://bqcuasqoofqjc"]
+[gd_scene load_steps=26 format=3 uid="uid://bqcuasqoofqjc"]
 
 [ext_resource type="Texture2D" uid="uid://bppmr1v7qalt2" path="res://Assets/Terrain/Terrain cutesy.png" id="1_p1n5c"]
 [ext_resource type="Texture2D" uid="uid://b231e64exfktb" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Background.png" id="1_y11ef"]
 [ext_resource type="PackedScene" uid="uid://du8c4c3ryx7y3" path="res://Scenes/player.tscn" id="2_ct1by"]
+[ext_resource type="Texture2D" uid="uid://ey86htuou2po" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/topbaggrund.png" id="2_gpn1b"]
 [ext_resource type="Texture2D" uid="uid://b7sgukarql4ca" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 1 anim1.png" id="2_pub03"]
 [ext_resource type="Texture2D" uid="uid://bkqgf5k38hh2y" path="res://Assets/Background/Free Pixel Art plataformer painted style/PNG/Mountains/Layer 1 anim2.png" id="3_eivdb"]
 [ext_resource type="PackedScene" uid="uid://dxgjys7yydevu" path="res://Scenes/coin.tscn" id="3_jw5mp"]
@@ -53,20 +54,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_3g7o6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ya4ek"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_0y76h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_jhsdm")
 }],
 "loop": true,
 "name": &"default",
@@ -659,6 +646,20 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_6adbf")
 sources/0 = SubResource("TileSetAtlasSource_mpqpk")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya4ek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0y76h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jhsdm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="GDScript" id="GDScript_q6hvo"]
 script/source = "extends Node
 
@@ -683,6 +684,11 @@ motion_mirroring = Vector2(900, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/Sky"]
 texture = ExtResource("1_y11ef")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/ParallaxBackground/Sky"]
+position = Vector2(652.889, -569.333)
+scale = Vector2(5, 5)
+texture = ExtResource("2_gpn1b")
 
 [node name="1" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 position = Vector2(438.5, -68)
@@ -711,16 +717,6 @@ motion_mirroring = Vector2(900, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/3"]
 sprite_frames = SubResource("SpriteFrames_11fn1")
 
-[node name="4" type="ParallaxLayer" parent="Background/ParallaxBackground"]
-position = Vector2(54, 17.3333)
-scale = Vector2(1.5, 1.5)
-motion_scale = Vector2(1.4, 1.4)
-motion_mirroring = Vector2(300, 0)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/4"]
-position = Vector2(-12.5, 59)
-sprite_frames = SubResource("SpriteFrames_ya4ek")
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(27, 174)
 tile_set = SubResource("TileSet_e64il")
@@ -730,10 +726,41 @@ layer_0/tile_data = PackedInt32Array(262081, 393216, 0, 262082, 458752, 0, 26208
 [node name="Player" parent="." instance=ExtResource("2_ct1by")]
 position = Vector2(-869, 201)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
+limit_left = -380
+limit_bottom = 220
+
 [node name="Death" parent="." instance=ExtResource("4_xekq5")]
 
 [node name="Next Level" parent="." instance=ExtResource("5_gkr2x")]
 position = Vector2(698, 174)
+
+[node name="Forgrunden" type="ParallaxLayer" parent="."]
+position = Vector2(-957, 220)
+scale = Vector2(2, 2)
+motion_scale = Vector2(1.4, 1.4)
+motion_mirroring = Vector2(300, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Forgrunden"]
+position = Vector2(-4.88889, 48.8889)
+sprite_frames = SubResource("SpriteFrames_ya4ek")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Forgrunden"]
+position = Vector2(284.5, 49)
+sprite_frames = SubResource("SpriteFrames_ya4ek")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Forgrunden"]
+position = Vector2(469, 50.5)
+sprite_frames = SubResource("SpriteFrames_ya4ek")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Forgrunden"]
+position = Vector2(775.5, 51)
+sprite_frames = SubResource("SpriteFrames_ya4ek")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Forgrunden"]
+position = Vector2(972, 49.5)
+sprite_frames = SubResource("SpriteFrames_ya4ek")
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -785,14 +812,22 @@ script = SubResource("GDScript_q6hvo")
 position = Vector2(304, 56)
 collision_mask = 3
 
-[node name="Coin" parent="." instance=ExtResource("3_jw5mp")]
-position = Vector2(-415, 167)
+[node name="Coin2" parent="Coins" instance=ExtResource("3_jw5mp")]
+position = Vector2(476, 25)
+collision_mask = 3
 
-[node name="Coin2" parent="." instance=ExtResource("3_jw5mp")]
-position = Vector2(-47, 90)
+[node name="Coin3" parent="Coins" instance=ExtResource("3_jw5mp")]
+position = Vector2(676, 60)
+collision_mask = 3
 
-[node name="Coin3" parent="." instance=ExtResource("3_jw5mp")]
-position = Vector2(432, 18)
+[node name="Coin4" parent="Coins" instance=ExtResource("3_jw5mp")]
+position = Vector2(826, -43)
+collision_mask = 3
 
-[node name="Coin4" parent="." instance=ExtResource("3_jw5mp")]
-position = Vector2(603, 172)
+[node name="Coin5" parent="Coins" instance=ExtResource("3_jw5mp")]
+position = Vector2(1317, -111)
+collision_mask = 3
+
+[node name="Coin6" parent="Coins" instance=ExtResource("3_jw5mp")]
+position = Vector2(1472, 46)
+collision_mask = 3
