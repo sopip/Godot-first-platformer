@@ -9,4 +9,4 @@ var enemy_killed = false
 
 @onready var coin_label = $Global/Coin_label
 
-#Coin_label.text = "Du har samlet" , antal , "mønter"
+var hjerter = 0
