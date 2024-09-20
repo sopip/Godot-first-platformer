@@ -13,14 +13,8 @@ func _ready():
 func _on_body_entered(body):
 	print("JUVBIBBIIBI")
 	Global.enemy_killed = true
+	
 	if body.is_in_group("player"):  # hvis kollisionen er med spilleren
-		collision_shape.disabled = true
-		weapon_collision.disabled = true
-		death_collision.disabled = true
-		
-		kill_enemy.disable_mode = true
-		death.disable_mode = true
-		
 		animated_sprite.play("chameleon_hit")  # skift til collected animation
 		
 		animated_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))

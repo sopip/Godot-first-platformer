@@ -4,9 +4,7 @@ extends Node2D
 @onready var weapon_area = $WeaponArea
 @onready var collision_shape = $WeaponArea/CollisionShape2D
 
-var time_passed = 0  # Variable to store the accumulated time
 var enemy_hit = false
-var current_chameleon_animation = 1
 
 func _ready():
 	#connect("body_entered", self, "_on_body_entered")
@@ -24,13 +22,6 @@ func _physics_process(delta):
 	#	time_pass()
 		#_on_weapon_hit(weapon_area)
 
-# bruges ikke
-func time_pass():
-	print("time passed")
-	enemy_hit = true
-	time_passed = 0  
-	play_hit()
-
 func _on_Area2D_body_entered(body):
 	print(body)
 	print("body entered")
@@ -38,13 +29,6 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		print("body entered")
 		Global.health -= 25
-	
-
-# bruges ikke
-func play_idle():
-	print("idle")
-	animated_sprite.play("chameleon_idle")
-	enemy_hit = false
 
 func play_hit(): # skal også fikses
 	if Global.enemy_killed == false:
