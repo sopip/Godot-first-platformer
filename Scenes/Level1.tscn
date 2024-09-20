@@ -885,7 +885,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="NextLevel" parent="." instance=ExtResource("7_irv8t")]
-position = Vector2(2156, -96)
+position = Vector2(474, -52)
 
 [node name="Death" parent="." instance=ExtResource("8_8kjqx")]
 

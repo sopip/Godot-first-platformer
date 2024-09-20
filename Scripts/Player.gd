@@ -7,7 +7,7 @@ const DOUBLETAP_DELAY = .25
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # double jump
-var debug_flappybird = false
+var debug_flappybird = true
 
 var jump_count = 0
 var max_jumps = 2
