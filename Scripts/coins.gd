@@ -9,7 +9,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player") and not collected:  # hvis kollisionen er med spilleren
 		collected = true
 		$CollisionShape2D.disabled = true
-		
+	
 		$AnimatedSprite2D.play("collected")  # skift til collected animation
 		$collectFruit.play() #Spiller lyden til når man samler en frugt
 		
