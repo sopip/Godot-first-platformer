@@ -8,7 +8,10 @@ extends Area2D
 
 @onready var animated_sprite = $"../AnimatedSprite2D"
 
-func _on_body_entered(body):
+func _ready():
+	collision_shape.connect("body_entered", Callable(self, "_on_Area2D_body_entered"))
+
+func _on_Area2D_body_entered(body):
 	print("entered: " + body)
 	if body.is_in_group("player"):  # hvis kollisionen er med spilleren
 		collision_shape.disabled = true

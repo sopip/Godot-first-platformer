@@ -36,11 +36,17 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	# hopper
-	if Input.is_action_just_pressed("w") or Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("w") or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
 	# tjekker for flip retning
-	var direction = Input.get_axis("a", "d")
+	var direction = 0
+
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("a"):
+		direction -= 1  # Move left
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("d"):
+		direction += 1  # Move right
+	#var direction = Input.get_axis("a" or "ui_left", "d" or "ui-right")
 	
 	# flipper sprite
 	if direction > 0:
