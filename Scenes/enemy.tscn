@@ -262,3 +262,5 @@ shape = SubResource("RectangleShape2D_jxyqe")
 stream = ExtResource("5_judpy")
 volume_db = -14.738
 pitch_scale = 2.15
+
+[connection signal="body_entered" from="KillEnemy" to="KillEnemy" method="_on_body_entered"]
